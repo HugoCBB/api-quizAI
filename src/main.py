@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.infra.routes import route as quiz_router
+from app.api.routes import route as quiz_router
 app = FastAPI()
 
 app.include_router(quiz_router, prefix="/question", tags=["Question"])
