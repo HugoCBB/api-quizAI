@@ -4,10 +4,7 @@ from app.domain.quiz_prompt import QUIZ_PROMPT
 from app.domain.question import QuestionOutput
 from typing import Dict
 import os
-from dotenv import load_dotenv
 
-
-load_dotenv()
 
 class QuizLlm:
     GOOGLE_API_KEY = str(os.getenv("GOOGLE_API_KEY"))

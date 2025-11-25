@@ -1,8 +1,16 @@
 from fastapi import FastAPI
-from app.api.routes import route as quiz_router
+from app.api.quiz_routes import route as quiz_router
+from app.api.user_routes import route as user_router
+from dotenv import load_dotenv
+from app.infra.database.db import Base, engine
+
+Base.metadata.create_all(bind=engine)
+
+load_dotenv()
 app = FastAPI()
 
 app.include_router(quiz_router, prefix="/question", tags=["Question"])
+app.include_router(user_router, prefix="/users", tags=["User"])
 
 @app.get('/')
 async def root():

@@ -1,0 +1,10 @@
+services:
+  db:
+    container_name: api-quizDB
+    image: postgres:17
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=apiQuizDB
+    ports:
+      - "5432:5432"
