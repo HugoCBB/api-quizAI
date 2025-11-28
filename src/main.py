@@ -15,7 +15,7 @@ app = FastAPI()
 app.include_router(quiz_router, prefix="/question", tags=["Question"])
 app.include_router(user_router, prefix="/users", tags=["User"])
 
-origins = "http://127.0.0.1:5500/index.html"
+origins = "https://quizai-kappa.vercel.app/"
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
