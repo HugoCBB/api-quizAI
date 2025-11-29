@@ -14,6 +14,7 @@ class UserInput(BaseModel):
 
 class UserOutput(BaseModel):
     id: int
-
-    class Config:
-        orm_mode =True
+    
+    model_config = {
+        "from_attributes": True
+    }

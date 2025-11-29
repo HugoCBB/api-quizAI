@@ -6,15 +6,16 @@ from dotenv import load_dotenv
 load_dotenv()
 
 DATABASE_URL = os.getenv(
-    "DATABASE_URL",
-    "postgresql://root:root@localhost:5432/apiQuizDB"
+    "DATABASE_URL"
 )
 
-engine = create_engine(DATABASE_URL)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+try:
+    engine = create_engine(DATABASE_URL, pool_pre_ping=True, connect_args={"connect_timeout": 5})
+    SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-Base = declarative_base()
-
+    Base = declarative_base()
+except Exception as e:
+    print(f"Erro ao contectar ao banco de dados: \n{e}")
 
 def get_db():
     db = SessionLocal()
