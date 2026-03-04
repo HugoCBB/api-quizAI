@@ -1,11 +1,11 @@
-from sqlalchemy import Column, Integer, String
-from app.infra.database.db import Base
+# from sqlalchemy import Column, Integer, String
+# from app.infra.database.db import Base
 
 
-class UserModel(Base):
-    __tablename__ = "users"
+# class UserModel(Base):
+#     __tablename__ = "users"
 
-    id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, nullable=False)
-    email = Column(String, nullable=False ,unique=True)
-    password = Column(String, nullable=False)
+#     id = Column(Integer, primary_key=True, index=True)
+#     name = Column(String, nullable=False)
+#     email = Column(String, nullable=False ,unique=True)
+#     password = Column(String, nullable=False)
