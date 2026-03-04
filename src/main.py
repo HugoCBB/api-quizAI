@@ -1,8 +1,8 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from app.api.quiz_routes import route as quiz_router
-from app.api.user_routes import route as user_router
 from dotenv import load_dotenv
+# from app.api.user_routes import route as user_router
 #from app.infra.database.db import Base, engine
 
 #Base.metadata.create_all(bind=engine)
